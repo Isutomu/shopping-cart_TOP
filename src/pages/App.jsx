@@ -1,19 +1,19 @@
-import { useState } from "react";
+import NavBar from "../containers/NavBar/NavBar";
+import CategoriesHome from "../containers/CategoriesHome/CategoriesHome";
+import Footer from "../containers/Footer/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const handleSearch = (value) => alert("it worked!" + value);
+  const toggleVisibilityShoppingCart = () => alert("cart toggled!");
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
+      <NavBar
+        handleSearch={handleSearch}
+        toggleVisibilityShoppingCart={toggleVisibilityShoppingCart}
+      />
+      <CategoriesHome />
+      <Footer />
     </>
   );
 }
