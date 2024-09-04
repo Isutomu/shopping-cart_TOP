@@ -4,7 +4,7 @@ import styles from "./Banner.module.css";
 
 const Banner = ({ data }) => {
   return (
-    <Link to={data.name} className={styles.banner}>
+    <Link to={`category/${data.name}`} className={styles.banner}>
       <img className={styles.img} src={data.imgUrl} />
       <span className={styles.categoryName}>{data.name.toUpperCase()}</span>
     </Link>
