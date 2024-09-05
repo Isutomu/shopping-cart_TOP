@@ -1,0 +1,29 @@
+.sidebar {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.closeCart {
+    cursor: pointer;
+}
+
+.productsList {
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

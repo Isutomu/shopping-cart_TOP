@@ -10,7 +10,7 @@
 .productContainer {
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    grid-template-rows: 50px 100px 50px 100px;
+    grid-template-rows: 50px 100px 50px 50px 50px;
     place-content: center;
     gap: 10px 30px;
 
@@ -23,21 +23,22 @@
 }
 
 .image {
-    grid-area: 1 / 1 / last-line / 2;
+    grid-area: 1 / 1 / 6 / 2;
+    align-self: center;
 }
 
 .title {
-    grid-area: 1 / 2 / 2 / last-column;
+    grid-area: 1 / 2 / 2 / 4;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .description {
-    grid-area: 2 / 2 / 3 / last-column;
+    grid-area: 2 / 2 / 3 / 4;
 }
 
 .price {
-    grid-area: 3 / 3 / 4 / last-column;
+    grid-area: 3 / 3 / 4 / 3;
     place-self: center end;
 
     font-size: 2rem;
@@ -45,7 +46,7 @@
 }
 
 .input {
-    grid-area: 4 / 3 / 5 / last-column;
+    grid-area: 4 / 3 / 5 / 3;
     place-self: center end;
 
     font-size: 1.3rem;
@@ -62,7 +63,7 @@
 }
 
 .button {
-    grid-area: 5 / 3 / last-line / last-column;
+    grid-area: 5 / 3 / 6 / 4;
     place-self: center end;
 
     border: 2px solid black;

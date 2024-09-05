@@ -1,7 +1,37 @@
 .container {
     height: 100vh;
+    overflow-x: hidden;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr min-content;
+}
+
+.cartOpen {
+    filter: brightness(10%);
+}
+
+.cart {
+    min-height: 100vh;
+    overflow: hidden;
+
+    background-color: rgba(222, 214, 68, 0.959);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transition: width 0.25s ease-in-out;
+    will-change: width;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.showCart {
+    width: 400px;
+}
+
+.hideCart {
+    width: 0;
 }

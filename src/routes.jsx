@@ -14,6 +14,7 @@ const routes = createBrowserRouter([
       },
       { path: "product/:id", element: <MainContainer type="product" /> },
     ],
+    errorElement: <span>Error!</span>,
   },
 ]);
 
