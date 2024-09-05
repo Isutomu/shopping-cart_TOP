@@ -1,18 +1,19 @@
 import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import CategoriesHome from "../CategoriesHome/CategoriesHome";
+import StoreOfCategory from "../StoreOfCategory/StoreOfCategory";
 import categories from "../../assets/categoriesData";
 
 const MainContainer = ({ isHome = false }) => {
-  const { storeCategory } = useParams();
-  const possibleCategories = categories.map((category) => category.name);
+  const { categoryId } = useParams();
+  const possibleCategories = categories.map((category) => category.categoryId);
 
   return (
     <main>
       {isHome ? (
         <CategoriesHome categories={categories} />
-      ) : possibleCategories.includes(storeCategory) ? (
-        <span>{storeCategory}</span>
+      ) : possibleCategories.includes(categoryId) ? (
+        <StoreOfCategory categoryId={categoryId} />
       ) : (
         <span>Error</span>
       )}

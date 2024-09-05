@@ -4,7 +4,7 @@ import styles from "./Banner.module.css";
 
 const Banner = ({ data }) => {
   return (
-    <Link to={`category/${data.name}`} className={styles.banner}>
+    <Link to={`category/${data.categoryId}`} className={styles.banner}>
       <img className={styles.img} src={data.imgUrl} />
       <span className={styles.categoryName}>{data.name.toUpperCase()}</span>
     </Link>
@@ -16,6 +16,7 @@ Banner.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     imgUrl: PropTypes.string.isRequired,
+    categoryId: PropTypes.string.isRequired,
   }),
 };
 

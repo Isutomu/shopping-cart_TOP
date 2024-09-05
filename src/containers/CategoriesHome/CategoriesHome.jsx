@@ -18,6 +18,7 @@ CategoriesHome.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       imgUrl: PropTypes.string.isRequired,
+      categoryId: PropTypes.string.isRequired,
     })
   ),
 };

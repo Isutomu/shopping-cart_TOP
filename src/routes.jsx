@@ -8,7 +8,8 @@ const routes = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <MainContainer isHome={true} /> },
-      { path: "/category/:storeCategory", element: <MainContainer /> },
+      { path: "/category/:categoryId", element: <MainContainer /> },
+      { path: "product/:productId", element: <MainContainer /> },
     ],
   },
 ]);
