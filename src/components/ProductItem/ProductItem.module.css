@@ -1,0 +1,38 @@
+.productItem {
+    height: 100%;
+    width: 100%;
+
+    padding: 5px 5px 10px;
+
+    text-decoration: none;
+    color: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: 1px solid rgba(0, 0, 0, 0.328);
+
+    transition: transform 0.15s ease-in-out;
+    will-change: transform;
+}
+
+.productItem:hover {
+    transform: scale(1.1);
+}
+
+.productPhoto {
+    height: 200px;
+    width: auto;
+}
+
+.description {
+    font-size: 1.3rem;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+}

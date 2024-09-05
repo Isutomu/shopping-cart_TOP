@@ -1,0 +1,86 @@
+.pageContainer {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productContainer {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 50px 100px 50px 100px;
+    place-content: center;
+    gap: 10px 30px;
+
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    text-align: start;
+}
+
+.image {
+    grid-area: 1 / 1 / last-line / 2;
+}
+
+.title {
+    grid-area: 1 / 2 / 2 / last-column;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.description {
+    grid-area: 2 / 2 / 3 / last-column;
+}
+
+.price {
+    grid-area: 3 / 3 / 4 / last-column;
+    place-self: center end;
+
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.input {
+    grid-area: 4 / 3 / 5 / last-column;
+    place-self: center end;
+
+    font-size: 1.3rem;
+}
+
+.inputField {
+    margin-left: 5px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    height: min-content;
+    width: 50px;
+    text-align: center;
+}
+
+.button {
+    grid-area: 5 / 3 / last-line / last-column;
+    place-self: center end;
+
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    font-size: 1.2rem;
+
+    padding: 3px 5px;
+    
+    background-color: rgba(127, 255, 212, 0.554);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-color: aquamarine;
+}
+
+.button:active {
+    box-shadow: inset rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

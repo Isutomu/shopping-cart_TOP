@@ -2,27 +2,33 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import CategoriesHome from "../CategoriesHome/CategoriesHome";
 import StoreOfCategory from "../StoreOfCategory/StoreOfCategory";
+import ProductPage from "../../components/ProductPage/ProductPage";
 import categories from "../../assets/categoriesData";
 
-const MainContainer = ({ isHome = false }) => {
-  const { categoryId } = useParams();
-  const possibleCategories = categories.map((category) => category.categoryId);
-
-  return (
-    <main>
-      {isHome ? (
-        <CategoriesHome categories={categories} />
-      ) : possibleCategories.includes(categoryId) ? (
-        <StoreOfCategory categoryId={categoryId} />
+function getPage({ type, id, possibleCategories }) {
+  switch (type) {
+    case "home":
+      return <CategoriesHome categories={categories} />;
+    case "category":
+      return possibleCategories.includes(id) ? (
+        <StoreOfCategory categoryId={id} />
       ) : (
         <span>Error</span>
-      )}
-    </main>
-  );
+      );
+    case "product":
+      return <ProductPage productId={id} />;
+  }
+}
+
+const MainContainer = ({ type = "home" }) => {
+  const { id } = useParams();
+  const possibleCategories = categories.map((category) => category.categoryId);
+
+  return <main>{getPage({ type, id, possibleCategories })}</main>;
 };
 
 MainContainer.propTypes = {
-  isHome: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 export default MainContainer;
