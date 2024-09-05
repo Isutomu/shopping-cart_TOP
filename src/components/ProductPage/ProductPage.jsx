@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import useStoreData from "../../customHooks/useStoreData";
 import styles from "./ProductPage.module.css";
 
 const ProductPage = ({ productId }) => {
   const apiUrl = `https://api.escuelajs.co/api/v1/products/${productId}`;
   const [productQuantity, setProductQuantity] = useState(1);
+  const addToCart = useOutletContext();
   const { data, error, loading } = useStoreData(apiUrl);
   const imageUrl = data?.images[0].replace('["', "").replace('"]', "");
 
@@ -38,7 +40,14 @@ const ProductPage = ({ productId }) => {
             onChange={handleChange}
           />
         </label>
-        <button className={styles.button}>Add to cart</button>
+        <button
+          className={styles.button}
+          onClick={() =>
+            addToCart({ ...data, quantity: Number(productQuantity) })
+          }
+        >
+          Add to cart
+        </button>
       </div>
     </section>
   );
